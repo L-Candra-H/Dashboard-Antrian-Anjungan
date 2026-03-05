@@ -107,7 +107,7 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM se
         <h3 class="anjungan-title">NOMOR ANTRIAN LOKET</h3>
         <div id="nomorLoket" class="nomor-box"></div>
         <div class="action-buttons">
-          <a id="btnCetakLoket" href="#" class="btn-ambil" target="_blank">CETAK >>></a>
+          <a id="btnCetakLoket" href="#" class="btn-ambil">CETAK >>></a>
           <button class="btn-back" onclick="kembaliKeForm()">⬅ Kembali ke Menu Awal</button>
         </div>
       </div>
