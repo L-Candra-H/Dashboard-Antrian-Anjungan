@@ -6,7 +6,7 @@ include_once '../conf/conf.php';
 include_once '../conf/helpers.php';
 
 // Ambil setting instansi
-$setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM setting LIMIT 1");
+$setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak, email FROM setting LIMIT 1");
 
 // Ambil data jadwal operasi
 $sql = "SELECT bo.no_rawat, bo.kode_paket, bo.tanggal, bo.jam_mulai, bo.jam_selesai, bo.status,
@@ -39,6 +39,7 @@ $count = mysqli_num_rows($result);
     <div class="instansi">
       <h1><?= $setting['nama_instansi'] ?></h1>
       <p><?= $setting['alamat_instansi'] ?> – <?= $setting['kabupaten'] ?></p>
+      <p><?= $setting['kontak'] ?> | <?= $setting['email'] ?></p>
     </div>
     <div id="clock"></div>
     <div id="next-prayer"></div>

@@ -43,7 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['reload'])) {
 }
 
 // --- Ambil setting instansi ---
-$setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM setting LIMIT 1");
+$setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak, email FROM setting LIMIT 1");
+
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -59,6 +60,7 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM se
     <div class="instansi">
       <h1><?= $setting['nama_instansi'] ?></h1>
       <p><?= $setting['alamat_instansi'] ?> – <?= $setting['kabupaten'] ?></p>
+      <p><?= $setting['kontak'] ?> | <?= $setting['email'] ?></p>
     </div>
     <div id="clock"></div>
     <div id="next-prayer"></div>
