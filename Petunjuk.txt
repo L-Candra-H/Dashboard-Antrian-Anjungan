@@ -43,3 +43,4 @@ Update terakhir :
 12. Penyempurnaan pada Anjungan Pendaftaran Mandiri
 13. Penambahan menu baru Antrian loket dengan menambah kolom pada DBnya
 14. Penambahan Input Tanggal Lahir pada Anjungan Pendaftaran Mandiri
+15. Ada tambahan menu baru dan membuat DB baru serta pengaturan pada conf
