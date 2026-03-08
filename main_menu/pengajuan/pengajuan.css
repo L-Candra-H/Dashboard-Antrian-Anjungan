@@ -203,7 +203,6 @@ body.pengajuan table.tabel-pengajuan tr:hover td {
 
 body.pengajuan table.tabel-pengajuan td[colspan] {
     border: 1px solid #ccc;
-    /* kotak pesan kosong tetap bergaris */
     text-align: center;
     font-style: italic;
     color: #666;
@@ -273,9 +272,34 @@ body.pengajuan table.tabel-pengajuan td form button {
     cursor: pointer;
     background-color: #AA00AA;
     color: #fff;
+    /* default tombol tetap putih */
     transition: background-color 0.3s ease;
 }
 
 body.pengajuan table.tabel-pengajuan td form button:hover {
     background-color: #880088;
+}
+
+/* Override khusus tombol SELESAI dan DITOLAK */
+body.pengajuan table.tabel-pengajuan td form button.btn-selesai {
+    background: none !important;
+    color: #007bff !important;
+    /* teks biru */
+    font-weight: bold;
+}
+
+body.pengajuan table.tabel-pengajuan td form button.btn-ditolak {
+    background: none !important;
+    color: #dc3545 !important;
+    /* teks merah */
+    font-weight: bold;
+}
+
+/* Tambahan hover agar tetap interaktif */
+.btn-selesai:hover {
+    text-decoration: underline;
+}
+
+.btn-ditolak:hover {
+    text-decoration: underline;
 }
