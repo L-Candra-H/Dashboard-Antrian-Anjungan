@@ -14,5 +14,6 @@ CREATE TABLE pengajuan_nota_salah (
     alasan TEXT NOT NULL,
     yang_mengajukan VARCHAR(100) NOT NULL,   -- nama pegawai dari session login
     tindak_lanjut TEXT NOT NULL DEFAULT 'Menunggu verifikasi', -- default agar tidak kosong
+    diproses_oleh VARCHAR(100) DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

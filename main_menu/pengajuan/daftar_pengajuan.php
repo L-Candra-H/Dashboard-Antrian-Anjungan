@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['no_rawat'])) {
     $nm_dokter     = mysqli_real_escape_string($conn_pengajuan, $_POST['nm_dokter']);
     $nm_poli       = mysqli_real_escape_string($conn_pengajuan, $_POST['nm_poli']);
     $alasan        = mysqli_real_escape_string($conn_pengajuan, $_POST['alasan']);
-    $yang_mengajukan = mysqli_real_escape_string($conn_pengajuan, $_POST['yang_mengajukan']);
+    $yang_mengajukan = mysqli_real_escape_string($conn_pengajuan, $_SESSION['nama_pengaju']);
 
     // Cari no_reg dari reg_periksa berdasarkan no_rawat
     $no_reg = '';
@@ -66,10 +66,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_pengajuan'], $_POST
 
     $id_pengajuan = intval($_POST['id_pengajuan']);
     $status_tindak = mysqli_real_escape_string($conn_pengajuan, $_POST['status_tindak']);
+    $diproses_oleh = mysqli_real_escape_string($conn_pengajuan, $_SESSION['nama_pengaju']);
 
-    $sql_update = "UPDATE pengajuan_nota_salah SET tindak_lanjut='$status_tindak' WHERE id_pengajuan=$id_pengajuan";
+    $sql_update = "UPDATE pengajuan_nota_salah 
+                   SET tindak_lanjut='$status_tindak', diproses_oleh='$diproses_oleh' 
+                   WHERE id_pengajuan=$id_pengajuan";
     if(mysqli_query($conn_pengajuan, $sql_update)){
-        $_SESSION['success_pengajuan'] = "Tindak lanjut berhasil diubah menjadi $status_tindak.";
+        $_SESSION['success_pengajuan'] = "Tindak lanjut berhasil diubah menjadi $status_tindak oleh $diproses_oleh.";
     } else {
         $_SESSION['error_pengajuan'] = "Gagal update: " . mysqli_error($conn_pengajuan);
     }
@@ -81,7 +84,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_pengajuan'], $_POST
 // Ambil daftar pengajuan
 $query = mysqli_query($conn_pengajuan, "SELECT id_pengajuan, no_reg, no_rawat, no_rkm_medis, nm_pasien,
                                                tgl_registrasi, status_lanjut, nm_dokter, nm_poli,
-                                               alasan, yang_mengajukan, tindak_lanjut, created_at
+                                               alasan, yang_mengajukan, tindak_lanjut, diproses_oleh, created_at
                                         FROM pengajuan_nota_salah
                                         ORDER BY created_at DESC");
 if(!$query){
@@ -137,6 +140,7 @@ if(!$query){
             <th>Alasan</th>
             <th>Yang Mengajukan</th>
             <th>Tindak Lanjut</th>
+            <th>Diproses Oleh</th>
             <th>Dibuat</th>
           </tr>
         </thead>
@@ -176,11 +180,12 @@ if(!$query){
                     <button disabled>Ditolak</button>
                   <?php } ?>
                 </td>
+                <td><?= $row['diproses_oleh'] ?: '-' ?></td>
                 <td><?= $row['created_at'] ? date('d-m-Y H:i', strtotime($row['created_at'])) : '-' ?></td>
               </tr>
             <?php } ?>
           <?php } else { ?>
-            <tr><td colspan="13">Belum ada pengajuan</td></tr>
+            <tr><td colspan="14">Belum ada pengajuan</td></tr>
           <?php } ?>
         </tbody>
       </table>

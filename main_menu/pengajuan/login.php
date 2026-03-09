@@ -14,27 +14,36 @@ if (isset($_POST['BtnLogin'])) {
     $passworde = validTeks4($_POST['passworde'],30);
 
     // cek admin
-    $cekAdmin = getOne2("SELECT COUNT(*) FROM admin WHERE usere=AES_ENCRYPT('$usere','nur') AND passworde=AES_ENCRYPT('$passworde','windi')");
+    $cekAdmin = getOne2("SELECT COUNT(*) FROM admin 
+                         WHERE usere=AES_ENCRYPT('$usere','nur') 
+                           AND passworde=AES_ENCRYPT('$passworde','windi')");
     // cek user
-    $cekUser  = getOne2("SELECT COUNT(*) FROM user WHERE id_user=AES_ENCRYPT('$usere','nur') AND password=AES_ENCRYPT('$passworde','windi')");
+    $cekUser  = getOne2("SELECT COUNT(*) FROM user 
+                         WHERE id_user=AES_ENCRYPT('$usere','nur') 
+                           AND password=AES_ENCRYPT('$passworde','windi')");
 
     if ($cekAdmin > 0) {
         // jika admin login
         $_SESSION["ses_pengajuan_login"] = $usere;
+        // ambil nama pegawai berdasarkan nik
         $_SESSION["nama_pengaju"]        = getOne2("SELECT nama FROM pegawai WHERE nik='$usere' LIMIT 1");
-        $_SESSION["hapus_nota_salah"]    = true; // admin otomatis punya hak akses penuh (boolean)
-        header("Location: daftar_pengajuan.php"); // langsung ke daftar
+        $_SESSION["hapus_nota_salah"]    = true; // admin otomatis punya hak akses penuh
+        header("Location: daftar_pengajuan.php");
         exit;
     } elseif ($cekUser > 0) {
         // ambil data user termasuk hak akses hapus_nota_salah
-        $rowUser = fetch_assoc("SELECT hapus_nota_salah FROM user WHERE id_user=AES_ENCRYPT('$usere','nur') AND password=AES_ENCRYPT('$passworde','windi') LIMIT 1");
+        $rowUser = fetch_assoc("SELECT hapus_nota_salah FROM user 
+                                WHERE id_user=AES_ENCRYPT('$usere','nur') 
+                                  AND password=AES_ENCRYPT('$passworde','windi') 
+                                LIMIT 1");
         
         $_SESSION["ses_pengajuan_login"] = $usere;
+        // ambil nama pegawai berdasarkan nik
         $_SESSION["nama_pengaju"]        = getOne2("SELECT nama FROM pegawai WHERE nik='$usere' LIMIT 1");
         // konversi string 'true'/'false' dari DB ke boolean PHP
         $_SESSION["hapus_nota_salah"]    = ($rowUser['hapus_nota_salah'] === 'true');
 
-        header("Location: daftar_pengajuan.php"); // langsung ke daftar
+        header("Location: daftar_pengajuan.php");
         exit;
     } else {
         $error = "Login gagal! Username/Password salah.";
