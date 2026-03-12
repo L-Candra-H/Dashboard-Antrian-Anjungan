@@ -173,7 +173,7 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak
           <!-- Tambahan tombol lebar 3x1 -->
           <div class="menu-button-wide">
             <a href="pengajuan/login.php" target="_blank" rel="noopener noreferrer">
-              <span>PENGAJUAN</span>
+              <span>PENGAJUAN DAN STATISTIK</span>
             </a>
           </div>
 

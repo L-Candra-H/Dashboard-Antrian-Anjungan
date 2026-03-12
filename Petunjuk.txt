@@ -44,3 +44,4 @@ Update terakhir :
 13. Penambahan menu baru Antrian loket dengan menambah kolom pada DBnya
 14. Penambahan Input Tanggal Lahir pada Anjungan Pendaftaran Mandiri
 15. Penambahan menu baru Pengajuan : Hapus Nota Salah dan Penggunaan Ruang Rapat (buat DB baru dan conf baru)
+16. Penambahan menu baru Statistik dan Tambahan : BOR, ALOS, dan lain-lain

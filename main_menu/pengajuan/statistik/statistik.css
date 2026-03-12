@@ -1,0 +1,156 @@
+/* === STATISTIK STYLE === */
+.stat-box {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: linear-gradient(135deg, #AA00AA, #880088);
+    color: #fff;
+    padding: 10px 15px;
+    /* lebih kecil */
+    border-radius: 6px;
+    text-align: center;
+    font-size: 13px;
+    /* lebih kecil */
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    min-width: 120px;
+}
+
+/* Kesimpulan sejajar, tidak turun ke bawah */
+.stat-item.kesimpulan {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px 12px;
+    min-width: 400px;
+    /* tambah lebar agar muat */
+    white-space: nowrap;
+    /* paksa tetap satu baris */
+    overflow: hidden;
+    /* sembunyikan jika terlalu panjang */
+    text-overflow: ellipsis;
+    /* tambahkan ... jika kepanjangan */
+}
+
+/* Form filter sejajar */
+.form-inline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.form-inline label {
+    font-weight: bold;
+}
+
+.form-inline input[type="date"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Tabel dengan garis kotak */
+.table-container-stat {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+table.tabel-pengajuan {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+table.tabel-pengajuan th,
+table.tabel-pengajuan td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: left;
+    background-color: #2c2c2c;
+    /* abu-abu gelap */
+    color: #fff;
+    /* teks putih agar kontras */
+}
+
+table.tabel-pengajuan th {
+    background-color: #AA00AA;
+    color: #fff;
+    text-align: center;
+}
+
+table.tabel-pengajuan tr:hover td {
+    background-color: #4a2a5f;
+    /* ungu gelap saat hover */
+}
+
+/* Tombol kembali di atas */
+.top-back {
+    margin-bottom: 15px;
+}
+
+.btn-back {
+    background-color: #555;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #333;
+}
+
+/* Tombol tampilkan */
+.btn-modern {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-modern:hover {
+    background: linear-gradient(135deg, #45a049, #3e8e41);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Pagination sederhana */
+.pagination {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 6px 14px;
+    margin: 0 5px;
+    border: 1px solid #AA00AA;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #AA00AA;
+    font-weight: bold;
+}
+
+.pagination a:hover {
+    background-color: #880088;
+    color: #fff;
+}

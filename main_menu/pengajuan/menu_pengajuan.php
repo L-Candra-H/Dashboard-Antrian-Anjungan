@@ -19,9 +19,8 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Menu Pengajuan</title>
   <link rel="stylesheet" href="../assets/style.css">
-  <link rel="stylesheet" href="pengajuan.css">
+  <link rel="stylesheet" href="pengajuan.css"> <!-- CSS khusus pengajuan -->
 </head>
 <body class="pengajuan">
   <!-- Header -->
@@ -38,10 +37,38 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak
 
   <main class="dashboard">
     <h2 class="anjungan-title">PILIH MENU</h2>
+
+    <!-- Menu Utama -->
     <div class="button-group">
-      <a href="daftar_pengajuan.php" class="btn-exit">Hapus Nota Salah</a>
-      <a href="daftar_penggunaan_ruang.php" class="btn-exit">Penggunaan Ruang</a>
-      <a href="logout.php" class="btn-exit">Logout</a>
+      <a href="daftar_pengajuan.php" class="btn-main">Hapus Nota Salah</a>
+      <a href="daftar_penggunaan_ruang.php" class="btn-main">Penggunaan Ruang Pertemuan</a>
+    </div>
+
+    <!-- Statistik RS -->
+    <div class="button-group">
+      <a href="statistik/bor.php" class="btn-stat">BOR</a>
+      <a href="statistik/alos.php" class="btn-stat">ALOS</a>
+      <a href="statistik/toi.php" class="btn-stat">TOI</a>
+      <a href="statistik/bto.php" class="btn-stat">BTO</a>
+      <a href="statistik/gdr.php" class="btn-stat">GDR</a>
+      <a href="statistik/ndr.php" class="btn-stat">NDR</a>
+      <a href="statistik/statistik_gabungan.php" class="btn-stat">REKAP STATISTIK</a>
+    </div>
+
+    <!-- Indikator Tambahan RS -->
+    <div class="button-group indikator-tambahan">
+      <a href="statistik/adc.php" class="btn-extra">ADC</a>
+      <a href="statistik/bc.php" class="btn-extra">BC</a>
+      <a href="statistik/bod.php" class="btn-extra">BOD</a>
+      <a href="statistik/cfr.php" class="btn-extra">CFR</a>
+      <a href="statistik/discharge.php" class="btn-extra">DISCHARGE RATE</a>
+      <a href="statistik/readmission.php" class="btn-extra">READMISSION RATE</a>
+      <a href="statistik/indikator_tambahan.php" class="btn-extra">INDIKATOR TAMBAHAN</a>
+    </div>
+
+    <!-- Logout -->
+    <div class="button-group">
+      <a href="logout.php" class="btn-logout">Logout</a>
     </div>
   </main>
 

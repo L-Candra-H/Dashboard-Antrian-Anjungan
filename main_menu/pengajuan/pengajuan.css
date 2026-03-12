@@ -575,3 +575,78 @@ body.pengajuan form.pengajuan-form input[name="nama_kegiatan"]:focus {
     text-align: center;
     color: #333;
 }
+
+/* === MENU UTAMA & STATISTIK === */
+.section-title {
+    margin-top: 25px;
+    font-size: 1.2em;
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.button-group {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-main,
+.btn-stat,
+.btn-logout {
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Menu Utama */
+.btn-main {
+    background-color: #2196F3;
+    /* biru */
+    color: white;
+}
+
+.btn-main:hover {
+    background-color: #1976D2;
+}
+
+/* Statistik RS */
+.btn-stat {
+    background-color: #4CAF50;
+    /* hijau */
+    color: white;
+}
+
+.btn-stat:hover {
+    background-color: #388E3C;
+}
+
+/* Logout */
+.btn-logout {
+    background-color: #f44336;
+    /* merah */
+    color: white;
+}
+
+.btn-logout:hover {
+    background-color: #d32f2f;
+}
+
+/* === INDIKATOR TAMBAHAN RS === */
+.btn-extra {
+    background-color: #FF9800;
+    /* oranye */
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-extra:hover {
+    background-color: #F57C00;
+}
