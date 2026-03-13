@@ -81,7 +81,7 @@ if (isset($_POST['BtnLogin'])) {
   </header>
 
   <main class="dashboard">
-    <h2 class="anjungan-title">PENGAJUAN</h2>
+    <h2 class="anjungan-title">PENGAJUAN DAN STATISTIK</h2>
 
     <!-- Form login -->
     <form class="login-form" method="post" action="">
