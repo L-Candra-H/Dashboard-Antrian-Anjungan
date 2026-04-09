@@ -160,11 +160,6 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak
           <?php
           $baseFolder = basename(dirname(__DIR__)); // ambil nama folder induk
           ?>
-          <a href="https://<?= $_SERVER['HTTP_HOST'] ?>/<?= $baseFolder ?>/webapps/presensi/?nocache=<?= time() ?>" 
-             target="_blank" rel="noopener noreferrer">
-             <img src="assets/img/presensi.png" alt="Presensi">
-             <span>PRESENSI</span>
-          </a>
           <a href="../kyc-library-php?nocache=<?= time() ?>" target="_blank" rel="noopener noreferrer">
             <img src="assets/img/kyc.png" alt="KYC">
             <span>KYC</span>
