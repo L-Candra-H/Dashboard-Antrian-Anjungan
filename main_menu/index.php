@@ -59,13 +59,14 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak
             <img src="assets/img/dokter_kamar_harian.png" alt="Gabungan">
             <span>Harian Dokter + Kamar</span>
           </a>
-
-          <!-- Tambahan tombol lebar 3x1 -->
-          <div class="menu-button-wide-1">
-            <a href="pengajuan/dashboard_penggunaan_ruang.php" target="_blank" rel="noopener noreferrer">
-              <span>PENGGUNAAN RUANG PERTEMUAN</span>
-            </a>
-          </div>
+          <a href="gabungan/praktek_index.php" target="_blank">
+            <img src="assets/img/doctor_dashboard.png" alt="Praktek">
+            <span>Praktek Dokter</span>
+          </a>
+          <a href="pengajuan/dashboard_penggunaan_ruang.php" target="_blank">
+            <img src="assets/img/ruang_pertemuan.png" alt="Ruang Pertemuan">
+            <span>Ruang Pertemuan</span>
+          </a>
           
         </div>
       </div>

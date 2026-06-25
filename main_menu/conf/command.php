@@ -1,9 +1,11 @@
 <?php
 // Membersihkan input teks dengan panjang maksimal
-function validTeks4($str, $length){
-    $str = substr(trim($str),0,$length);
-    $conn = bukakoneksi(); // koneksi SIMRS dari conf.php
-    return mysqli_real_escape_string($conn,$str);
+if (!function_exists('validTeks4')) {
+    function validTeks4($str, $length){
+        $str = substr(trim($str),0,$length);
+        $conn = bukakoneksi(); // koneksi SIMRS dari conf.php
+        return mysqli_real_escape_string($conn,$str);
+    }
 }
 
 // Eksekusi query dan ambil satu nilai (satu kolom pertama)

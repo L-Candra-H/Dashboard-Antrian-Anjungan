@@ -63,6 +63,20 @@ function validTeks($data)
     return $save;
 }
 
+function validTeks4($data, $panjang)
+{
+    $save = trim($data);
+    $save = str_replace("'", "", $save);
+    $save = str_replace("\\", "", $save);
+    $save = str_replace(";", "", $save);
+    $save = str_replace("`", "", $save);
+    $save = str_replace("--", "", $save);
+    $save = str_replace("/*", "", $save);
+    $save = str_replace("*/", "", $save);
+    $save = str_replace("#", "", $save);
+    return mb_substr($save, 0, $panjang);
+}
+
 function validangka($angka)
 {
     if (isset($angka)) {

@@ -4,6 +4,7 @@ Letakkan di Server pada folder SIMRS Khanza berada (posisi sejajar dengan webapp
 1. edit conf.php, isi yang sesuai dengan pengaturan conf.php yang ada di server masing-masing
 
 2. buka DB tabel antriapotek2, antriapotek3, antripoli dan ubah di kolom status menjadi '0','1','2','3'
+
    buka DB tabel antriloketcetak dan tambahkan ini :
 ALTER TABLE antriloketcetak 
 ADD COLUMN status ENUM('menunggu','dipanggil','selesai') DEFAULT 'menunggu';
@@ -45,3 +46,4 @@ Update terakhir :
 14. Penambahan Input Tanggal Lahir pada Anjungan Pendaftaran Mandiri
 15. Penambahan menu baru Pengajuan : Hapus Nota Salah dan Penggunaan Ruang Rapat (buat DB baru dan conf baru)
 16. Penambahan menu baru Statistik dan Tambahan : BOR, ALOS, dan lain-lain
+17. Penambahan menu Dashboard Praktek Dokter + Daftar Pasien serta Perubahan di menu utama

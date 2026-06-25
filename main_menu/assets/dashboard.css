@@ -180,7 +180,8 @@
 .menu-button-wide {
     grid-column: span 3;
     /* Lebar 3 kolom */
-    margin-top: 12px;
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 
 .menu-button-wide a {
