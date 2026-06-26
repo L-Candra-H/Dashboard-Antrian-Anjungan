@@ -165,13 +165,10 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak
             <img src="assets/img/kyc.png" alt="KYC">
             <span>KYC</span>
           </a>
-
-          <!-- Tambahan tombol lebar 3x1 -->
-          <div class="menu-button-wide">
-            <a href="pengajuan/login.php" target="_blank" rel="noopener noreferrer">
-              <span>PENGAJUAN DAN STATISTIK</span>
-            </a>
-          </div>
+          <a href="pengajuan/login.php" target="_blank" rel="noopener noreferrer">
+            <img src="assets/img/statistik.png" alt="Pengajuan dan Statistik">
+            <span>PENGAJUAN DAN STATISTIK</span>
+          </a>
 
         </div>
       </div>
