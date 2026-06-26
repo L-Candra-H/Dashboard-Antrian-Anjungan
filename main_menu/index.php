@@ -63,6 +63,10 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak
             <img src="assets/img/doctor_dashboard.png" alt="Praktek">
             <span>Praktek Dokter</span>
           </a>
+          <a href="antrian/antrian_loket.php" target="_blank">
+            <img src="assets/img/loket.png" alt="Antrian Loket">
+            <span>Loket Admisi</span>
+          </a>
           <a href="pengajuan/dashboard_penggunaan_ruang.php" target="_blank">
             <img src="assets/img/ruang_pertemuan.png" alt="Ruang Pertemuan">
             <span>Ruang Pertemuan</span>
@@ -94,10 +98,6 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak
           <a href="anjungan/anjungan.php" target="_blank">
             <img src="assets/img/anjungan.png" alt="Anjungan">
             <span>Anjungan Mandiri</span>
-          </a>
-          <a href="antrian/antrian_loket.php" target="_blank">
-            <img src="assets/img/loket.png" alt="Antrian Loket">
-            <span>Loket Admisi</span>
           </a>
         </div>
 
