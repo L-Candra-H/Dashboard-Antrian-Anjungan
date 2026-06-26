@@ -5,45 +5,26 @@ Letakkan di Server pada folder SIMRS Khanza berada (posisi sejajar dengan webapp
 
 2. buka DB tabel antriapotek2, antriapotek3, antripoli dan ubah di kolom status menjadi '0','1','2','3'
 
-   buka DB tabel antriloketcetak dan tambahkan ini :
+3. buka DB tabel antriloketcetak dan tambahkan ini :
 ALTER TABLE antriloketcetak 
 ADD COLUMN status ENUM('menunggu','dipanggil','selesai') DEFAULT 'menunggu';
 
-3. untuk mengatur jadwal Waktu sholat di kota wilayah masing-masing, buka file clock.js
+4. untuk mengatur jadwal Waktu sholat di kota wilayah masing-masing, buka file clock.js
 cari :
         const response = await fetch(`https://api.aladhan.com/v1/timingsByCity/${day}-${month}-${year}?city=Malang&country=Indonesia&method=20`);
 
 ganti Malang dengan wilayah masing-masing
 
-4. (Opsional), buka file di main_menu/index.php cari pada bagian KYC...jika tidak punya KYC, hapus saja mulai dari :
+5. (Opsional), buka file di main_menu/index.php cari pada bagian KYC...jika tidak punya KYC, hapus saja mulai dari :
           <a href="../kyc-library-php?nocache=<?= time() ?>" target="_blank" rel="noopener noreferrer">
             <img src="assets/img/kyc.png" alt="KYC">
             <span>KYC</span>
           </a>
 
-5. Semoga berhasil dan aman tanpa terkendala
+6. Semoga berhasil dan aman tanpa terkendala
 
 untuk buka : http://ip server/folder institusi (jika ada)/main_menu/ atau 
 http://ip server/main_menu/
 
 * Cara Pakai Antrian Farmasi agar antrian bisa muncul wajib dilakukan dari menu Obat - Input Resep Dokter
 * Panggil Ulang Poli bisa di fungsikan jika telah dilakukan panggilan masuk poli oleh dokter dan belum memanggil pasien berikutnya (ini ditujukan jika panggilan pertama tidak terdengar)
-
-Update terakhir :
-1. Penataan pada dashboard Ketersediaan Kamar, menambah pengaturan statusdata = 1
-2. Perubahan penampilan pada dashboard Dokter = Penambahan Photo dan pengelompokkan dokter berdasarkan kode poli
-3. Perubahan penampilan pada dashboard Harian Dokter = Penambahan Photo
-4. Penataan pada dashboard Dokter + Kamar, menambah pengaturan statusdata = 1 pada Kamar
-5. Penataan pada dashboard Harian Dokter + Kamar, menambah pengaturan statusdata = 1 pada Kamar
-6. Menggabungkan Antrian Laboratorium PK, PA, dan MB menjadi satu Antrian Laboratorium
-7. Menambah menu baru Anjungan Pendaftaran Mandiri
-8. Menghapus status selesai di get_last_farmasi.php agar data resep pasien bisa muncul di daftar antrian farmasi
-9. Edit Bug pada Antrian Laboratorium (gabungan dari Lab. PK, PA dan MB)
-10. Perubahan penampilan pada dashboard Ketersediaan Kamar
-11. Penambahan pengaturan untuk tampilan full screen di Layar TV ukuran 32 inchi ke atas
-12. Penyempurnaan pada Anjungan Pendaftaran Mandiri
-13. Penambahan menu baru Antrian loket dengan menambah kolom pada DBnya
-14. Penambahan Input Tanggal Lahir pada Anjungan Pendaftaran Mandiri
-15. Penambahan menu baru Pengajuan : Hapus Nota Salah dan Penggunaan Ruang Rapat (buat DB baru dan conf baru)
-16. Penambahan menu baru Statistik dan Tambahan : BOR, ALOS, dan lain-lain
-17. Penambahan menu Dashboard Praktek Dokter + Daftar Pasien serta Perubahan di menu utama
