@@ -99,39 +99,23 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak
             <img src="assets/img/anjungan.png" alt="Anjungan">
             <span>Anjungan Mandiri</span>
           </a>
-        </div>
-
-        <!-- Tombol bawah utama -->
-        <div class="menu-actions">
-          <!-- Tombol kiri: PANGGIL ANTRI LOKET -->
-          <div class="action-left">
-            <a href="antrian/antrian_loket_panggil.php" target="_blank">
-              PANGGIL ANTRI LOKET
-            </a>
-          </div>
-
-          <!-- Tombol tengah: PANGGIL ULANG FARMASI -->
-          <div class="action-middle">
-            <a href="antrian/antrian_farmasi_bypass.php" target="_blank">
-              PANGGIL ULANG FARMASI
-            </a>
-          </div>
-
-          <!-- Tombol kanan: PANGGIL ULANG POLI -->
-          <div class="action-right">
-            <a href="antrian/antrian_poli_bypass.php" target="_blank">
-              PANGGIL ULANG POLI
-            </a>
-          </div>
-        </div>
-
-        <!-- Tambahan baris khusus API GET LAST -->
-        <div class="menu-actions-full">
           <a href="antrian/api_get_last_all.php" target="_blank">
-            API GET LAST
+            <img src="assets/img/api_get.png" alt="Api Get Last">
+            <span>API Get Last</span>
+          </a>
+          <a href="antrian/antrian_loket_panggil.php" target="_blank">
+            <img src="assets/img/antrian_loket.png" alt="Antrian Loket Panggil">
+            <span>Panggil Antri Loket</span>
+          </a>
+          <a href="antrian/antrian_farmasi_bypass.php" target="_blank">
+            <img src="assets/img/antrian_farmasi_1.png" alt="Antrian Farmasi Bypass">
+            <span>Panggil Ulang Farmasi</span>
+          </a>
+          <a href="antrian/antrian_poli_bypass.php" target="_blank">
+            <img src="assets/img/antrian_poli_1.png" alt="Antrian Poli Bypass">
+            <span>Panggil Ulang Poli</span>
           </a>
         </div>
-
       </div>
 
       <!-- Kolom SIMRS -->
