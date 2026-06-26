@@ -43,24 +43,31 @@ while ($r = mysqli_fetch_assoc($res)) $doctors[$r['kd_dokter']] = $r;
     <div class="panel">
       <h2>DAFTAR DOKTER PRAKTEK (<?= $hari ?>)</h2>
       <div class="table-container scrollable" id="doctorTableContainer">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Nama Dokter</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php if (empty($doctors)): ?>
-              <tr><td colspan="2">Belum ada dokter praktek hari ini.</td></tr>
-            <?php else: foreach ($doctors as $kd => $doc): ?>
-              <tr>
-                <td><?= htmlspecialchars($doc['nm_dokter']) ?></td>
-                <td><a class="link-button" href="dokter_praktek.php?kd=<?= urlencode($kd) ?>">Buka dashboard</a></td>
-              </tr>
-            <?php endforeach; endif; ?>
-          </tbody>
-        </table>
+        <?php if (empty($doctors)): ?>
+          <div class="no-doctors">Belum ada dokter praktek hari ini.</div>
+        <?php else: ?>
+          <div class="doctor-grid">
+            <?php foreach ($doctors as $kd => $doc):
+              $photoSrc = '';
+              $photo = trim($doc['photo'] ?? '');
+              if ($photo !== '' && $photo !== 'pages/pegawai/photo/') {
+                  $photoSrc = '/'.basename(dirname(dirname(__DIR__))).'/webapps/penggajian/'.$photo;
+              }
+            ?>
+              <div class="doctor-card">
+                <?php if ($photoSrc): ?>
+                  <img class="doctor-photo" src="<?= htmlspecialchars($photoSrc) ?>" alt="Foto <?= htmlspecialchars($doc['nm_dokter']) ?>">
+                <?php else: ?>
+                  <div class="doctor-photo no-photo">Tidak ada foto</div>
+                <?php endif; ?>
+                <h3 class="doctor-name"><?= htmlspecialchars($doc['nm_dokter']) ?></h3>
+                <div class="doctor-action">
+                  <a class="link-button" href="dokter_praktek.php?kd=<?= urlencode($kd) ?>">Buka dashboard</a>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
   </main>

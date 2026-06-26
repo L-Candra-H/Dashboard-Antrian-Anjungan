@@ -30,46 +30,9 @@
 }
 
 .table-container.scrollable {
-    max-height: calc(100vh - 240px);
+    height: calc(100vh - 220px);
     overflow-y: auto;
     padding-right: 10px;
-}
-
-.table-container.scrollable::-webkit-scrollbar {
-    width: 10px;
-}
-
-.table-container.scrollable::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.05);
-}
-
-.table-container.scrollable::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.25);
-    border-radius: 10px;
-}
-
-.table-container.scrollable:hover::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.4);
-}
-
-.scroll-controls {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.scroll-btn {
-    border: 1px solid rgba(255,255,255,0.35);
-    background: rgba(255,255,255,0.08);
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-
-.scroll-btn:hover {
-    background: rgba(255,255,255,0.15);
 }
 
 /* Tabel umum */
@@ -120,6 +83,86 @@
 .tbody-container {
     max-height: 400px;
     overflow-y: auto;
+}
+
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(160px, 1fr));
+    gap: 12px;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+}
+
+.doctor-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 14px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 220px;
+    max-width: 180px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.doctor-photo {
+    width: 100px;
+    height: 110px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: #192131;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    margin: 0 0 10px;
+    transform: translateY(4px);
+}
+.doctor-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+.doctor-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: #192131;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    margin-bottom: 12px;
+}
+
+.doctor-photo.no-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #c8d2e2;
+    font-size: 13px;
+    padding: 10px;
+    width: 120px;
+    height: 120px;
+}
+
+.doctor-name {
+    margin: 0 0 12px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.doctor-action {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.no-doctors {
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
 }
 
 /* Header and card styles */
