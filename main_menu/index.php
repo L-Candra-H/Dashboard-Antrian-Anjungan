@@ -130,6 +130,10 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak
             <img src="assets/img/emcu.png" alt="E MCU">
             <span>E MCU</span>
           </a>
+          <a href="../eeksekutif?nocache=<?= time() ?>" target="_blank" rel="noopener noreferrer">
+            <img src="assets/img/eeksekutif.png" alt="E Eksekutif">
+            <span>E EKSEKUTIF</span>
+          </a>
           <a href="../epasien?nocache=<?= time() ?>" target="_blank" rel="noopener noreferrer">
             <img src="assets/img/epasien.png" alt="E Pasien">
             <span>E PASIEN</span>
