@@ -1,6 +1,10 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+error_reporting(0);
+ini_set('display_errors', 0);
+
+$role = $_POST['role'] ?? '';
+$usere = $_POST['usere'] ?? '';
+$passworde = $_POST['passworde'] ?? '';
 
 include_once '../conf/conf.php';
 include_once '../conf/helpers.php';

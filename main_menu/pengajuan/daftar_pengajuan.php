@@ -5,8 +5,12 @@ if(!isset($_SESSION["ses_pengajuan_login"])) {
     exit;
 }
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+error_reporting(0);
+ini_set('display_errors', 0);
+
+$role = $_POST['role'] ?? '';
+$usere = $_POST['usere'] ?? '';
+$passworde = $_POST['passworde'] ?? '';
 
 include_once '../conf/conf.php';
 include_once '../conf/conf_pengajuan.php'; // DB pengajuan
@@ -21,19 +25,28 @@ $userLogin = $_SESSION['ses_pengajuan_login'];
 
 $canHapusNotaSalah = false;
 
-// cek apakah user ada di tabel admin
-$cekAdmin = mysqli_query($conn_main, "SELECT usere FROM admin WHERE usere='$userLogin' LIMIT 1");
-if($cekAdmin && mysqli_num_rows($cekAdmin) > 0){
-    $canHapusNotaSalah = true;
+// Sanitasi username dari session sebelum digunakan di query
+$userLogin = $_SESSION['ses_pengajuan_login'] ?? '';
+$userLoginEsc = '';
+if($userLogin !== '' && $conn_main){
+  $userLoginEsc = mysqli_real_escape_string($conn_main, $userLogin);
 }
 
-// cek apakah user ada di tabel user dengan flag hapus_nota_salah = true
-$cekUser = mysqli_query($conn_main, "SELECT hapus_nota_salah FROM user WHERE id_user='$userLogin' LIMIT 1");
-if($cekUser && mysqli_num_rows($cekUser) > 0){
+if($userLoginEsc !== ''){
+  // cek apakah user ada di tabel admin
+  $cekAdmin = mysqli_query($conn_main, "SELECT usere FROM admin WHERE usere='$userLoginEsc' LIMIT 1");
+  if($cekAdmin && mysqli_num_rows($cekAdmin) > 0){
+    $canHapusNotaSalah = true;
+  }
+
+  // cek apakah user ada di tabel user dengan flag hapus_nota_salah = true
+  $cekUser = mysqli_query($conn_main, "SELECT hapus_nota_salah FROM user WHERE id_user='$userLoginEsc' LIMIT 1");
+  if($cekUser && mysqli_num_rows($cekUser) > 0){
     $rowUser = mysqli_fetch_assoc($cekUser);
     if(strtolower($rowUser['hapus_nota_salah']) === 'true'){
-        $canHapusNotaSalah = true;
+      $canHapusNotaSalah = true;
     }
+  }
 }
 
 // Jika ada data POST dari form_pengajuan
@@ -104,13 +117,19 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_pengajuan'], $_POST
 }
 
 // Ambil daftar pengajuan
-$query = mysqli_query($conn_pengajuan, "SELECT id_pengajuan, no_reg, no_rawat, no_rkm_medis, nm_pasien,
-                                               tgl_registrasi, status_lanjut, nm_dokter, nm_poli,
-                                               alasan, yang_mengajukan, tindak_lanjut, diproses_oleh, created_at, jam_proses
-                                        FROM pengajuan_nota_salah
-                                        ORDER BY created_at DESC");
-if(!$query){
+if(!$canHapusNotaSalah){
+  // Beri pesan akses dan jangan jalankan query yang bisa menimbulkan error 500
+  $_SESSION['error_pengajuan'] = "Anda tidak memiliki hak akses untuk melihat halaman ini.";
+  $query = null;
+} else {
+  $query = mysqli_query($conn_pengajuan, "SELECT id_pengajuan, no_reg, no_rawat, no_rkm_medis, nm_pasien,
+                         tgl_registrasi, status_lanjut, nm_dokter, nm_poli,
+                         alasan, yang_mengajukan, tindak_lanjut, diproses_oleh, created_at, jam_proses
+                    FROM pengajuan_nota_salah
+                    ORDER BY created_at DESC");
+  if(!$query){
     die("Query error: " . mysqli_error($conn_pengajuan));
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -168,7 +187,7 @@ if(!$query){
           </tr>
         </thead>
         <tbody>
-          <?php if(mysqli_num_rows($query) > 0) { ?>
+          <?php if($query && mysqli_num_rows($query) > 0) { ?>
             <?php while($row = mysqli_fetch_assoc($query)) { ?>
               <tr>
                 <td><?= $row['id_pengajuan'] ?></td>
