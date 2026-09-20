@@ -2,8 +2,8 @@
 
 $db_hostname    = "localhost";
 $db_username    = "root";
-$db_password    = "xxx";
-$db_name        = "xxx";
+$db_password    = "cand1107ra";
+$db_name        = "sik_rs_build";
 define('USERHYBRIDWEB', 'yanghack');
 define('PASHYBRIDWEB', 'sialselamanya');
 

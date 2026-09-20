@@ -71,10 +71,6 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak
             <img src="assets/img/loket.png" alt="Antrian Loket">
             <span>Loket Admisi</span>
           </a>
-          <a href="pengajuan/dashboard_penggunaan_ruang.php" target="_blank">
-            <img src="assets/img/ruang_pertemuan.png" alt="Ruang Pertemuan">
-            <span>Ruang Pertemuan</span>
-          </a>
           
         </div>
       </div>
@@ -156,10 +152,6 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak
           <a href="../kyc-library-php?nocache=<?= time() ?>" target="_blank" rel="noopener noreferrer">
             <img src="assets/img/kyc.png" alt="KYC">
             <span>KYC</span>
-          </a>
-          <a href="pengajuan/login.php" target="_blank" rel="noopener noreferrer">
-            <img src="assets/img/statistik.png" alt="Pengajuan dan Statistik">
-            <span>PENGAJUAN DAN STATISTIK</span>
           </a>
 
         </div>

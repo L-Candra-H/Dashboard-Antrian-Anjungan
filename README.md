@@ -3,9 +3,6 @@ video :
 DASHBOARD  
 👉 https://youtu.be/VoxlYmsPnGg?si=SAI0Ycjfm2vUjeqn
 
-PENGAJUAN HAPUS NOTA SALAH  
-👉 https://youtu.be/DhinvnUEKZk?si=dZWW1UxK8kmL6tN3
-
 
 
 Update terakhir :
@@ -38,9 +35,5 @@ Update terakhir :
 
 14\. Penambahan Input Tanggal Lahir pada Anjungan Pendaftaran Mandiri
 
-15\. Penambahan menu baru Pengajuan : Hapus Nota Salah dan Penggunaan Ruang Rapat (buat DB baru dan conf baru)
-
-16\. Penambahan menu baru Statistik dan Tambahan : BOR, ALOS, dan lain-lain
-
-17\. Penambahan menu Dashboard Praktek Dokter + Daftar Pasien serta Perubahan di menu utama
+15\. Penambahan menu Dashboard Praktek Dokter + Daftar Pasien serta Perubahan di menu utama
 
