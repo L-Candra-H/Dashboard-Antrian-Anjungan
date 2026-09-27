@@ -3,7 +3,9 @@ Letakkan di Server pada folder SIMRS Khanza berada (posisi sejajar dengan webapp
 
 1. edit conf.php, isi yang sesuai dengan pengaturan conf.php yang ada di server masing-masing
 
-2. buka DB tabel antriapotek2, antriapotek3, antripoli dan ubah di kolom status menjadi '0','1','2','3'
+2. buka DB tabel :
+antriapotek2, antriapotek3, antripoli 
+dan ubah di kolom status menjadi '0','1','2','3'
 
 3. buka DB tabel antriloketcetak dan tambahkan ini :
 ALTER TABLE antriloketcetak 
