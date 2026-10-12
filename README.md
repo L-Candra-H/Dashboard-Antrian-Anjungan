@@ -1,7 +1,7 @@
 video :
 
 DASHBOARD  
-👉 https://youtu.be/VoxlYmsPnGg?si=SAI0Ycjfm2vUjeqn
+👉 https://youtu.be/IwP0rzuWdRY
 
 
 
